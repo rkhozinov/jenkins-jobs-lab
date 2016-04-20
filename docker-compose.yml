@@ -1,0 +1,37 @@
+version : '2'
+services:
+  image: evarga/jenkins-slave
+  master:
+    build: .
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    ports:
+     - "8080:8080"
+     - "50000:50000"
+    environment:
+     - JENKINS_SLAVE_AGENT_PORT 50000
+    depends_on:
+     - slave1
+     - slave2
+     - slave3
+     - slave4
+     - slave5
+     - slave6
+  slave1:
+    environment:
+     - HOSTNAME=slave1                
+  slave2:
+    environment:
+     - HOSTNAME=slave2                
+  slave3:
+    environment:
+     - HOSTNAME=slave3                
+  slave4:
+    environment:
+     - HOSTNAME=slave4                
+  slave5:
+    environment:
+     - HOSTNAME=slave5                
+  slave6:
+    environment:
+     - HOSTNAME=slave6                
