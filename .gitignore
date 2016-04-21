@@ -1,8 +1,8 @@
 url
 plugins
 jenkins_home/plugins
+jenkins_home/config-history
 jenkins_home/war
-jenkins_home/credentials.xml
 jenkins_home/identity.key.enc
 jenkins_home/init.groovy.d
 jenkins_home/jobs
